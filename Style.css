@@ -1,0 +1,67 @@
+body {
+    background-color: rgb(148, 190, 148);
+}
+
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    border-radius: 100%;
+}
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    
+}
+
+p {
+    width: 540px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+ul {
+
+    text-align: left;
+    font-family: Arial, sans-serif;
+    line-height: 2;
+}
+
+h4 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+a {
+    width: 140px;
+    font-family: Arial, sans-serif;
+    margin-left: 40%;
+    margin-right: auto;
+    display: inline-block;
+}
+
+.informações {
+
+    color: black;
+    width: 540px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+}
+
+#picture_github {
+    display: inline-block;
+    margin-left: auto;
+}
