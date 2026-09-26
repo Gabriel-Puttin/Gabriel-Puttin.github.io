@@ -1,59 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
-    <link rel="stylesheet" type="text/css" href="./Style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gabriel@portfolio: ~</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-    <img src="./Minha imagem.jpeg" alt="Foto pessoal de Gabriel Constantino Biancardi Puttin" width="300px"> </a>
-    
-    <h1>Gabriel Constantino Biancardi Puttin</h1>
-    
-            <p>
-                Olá, me chamo Gabriel Constantino Biancardi Puttin, tenho 19 anos e resido em Nova Venécia/Espírito Santo. Sou técnico em Edificações e estudante de desenvolvimento web da Trybe.
+  <canvas id="matrix-bg" aria-hidden="true"></canvas>
 
-            </p>
-           
-            <a href="https://www.linkedin.com/in/gabriel-constantino-biancardi-puttin" target="_blank" > <img src="download.png" alt="Ícone do Linkedin"></a> 
-            
-            <a href="https://github.com/Gabriel-Puttin" target="_blank" id="picture_github" > <img src="download (1).png" alt="Ícone do GitHub"></a>
+  <main class="terminal" id="terminal" role="application" aria-label="Terminal interativo do portfólio">
+    <div id="boot-image-container"></div>
+    <header class="terminal__bar">
+      <div class="terminal__dots">
+        <span class="dot dot--close"></span>
+        <span class="dot dot--min"></span>
+        <span class="dot dot--max"></span>
+      </div>
+      <span class="terminal__title">gabriel@portfolio: ~</span>
+    </header>
 
-            <br>
-            <br>
+    <section class="terminal__body" id="output" tabindex="-1" aria-live="polite"></section>
 
-             <a href="#minhas_habilidades" class="informações"  >Consulte mais informações</a>
+    <div class="terminal__input-line">
+      <span class="prompt" id="prompt">gabriel@portfolio:~$</span>
+      <input
+        type="text"
+        id="cmd-input"
+        class="terminal__input"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+        aria-label="Digite um comando"
+      >
+    </div>
+  </main>
 
-            <br>
-  
-            <h4 id="minhas_habilidades">Habilidades em que me orgulho</h4>
-
-            <ul>
-                <li>Dedicação</li>
-                <li>Persistência</li>
-                <li>Responsabilidade</li>
-            </ul>  
-
-        <h4>Minhas habilidades</h4>
-
-        <ul>
-            <li>AutoCad</li>
-            <li>Sketchup</li>
-            <li>Unix e Bash</li>
-            <li>Git e GitHub</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-        </ul>
-    
+  <script src="script.js"></script>
 </body>
 </html>
