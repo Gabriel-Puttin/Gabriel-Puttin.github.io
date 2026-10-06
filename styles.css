@@ -134,17 +134,30 @@ body {
   max-width: 100%;
   height: auto;
   margin: 10px 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
 }
 
 .snake-game {
   font-family: var(--font-mono);
-  font-size: 16px;
-  line-height: 1;
+  font-size: 14px;
+  line-height: 1.15;
   letter-spacing: 0;
   white-space: pre;
   color: var(--accent-green);
   margin: 4px 0 0;
   width: fit-content;
+}
+
+.game-over-art {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.15;
+  white-space: pre;
+  color: var(--accent-orange);
+  margin: 6px 0;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .terminal__input-line {
@@ -174,6 +187,224 @@ body {
   caret-color: var(--accent-orange);
 }
 
+/* ============================================================
+   MODAL DE PROJETOS
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: rgba(10, 2, 9, 0.72);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.modal {
+  position: relative;
+  width: min(680px, 100%);
+  max-height: 86vh;
+  overflow-y: auto;
+  background: var(--bg-purple);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+  padding: 28px 28px 24px;
+}
+
+.modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bar-purple);
+  color: var(--text-main);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.modal__close:hover {
+  background: var(--accent-orange);
+}
+
+.modal__header {
+  padding-right: 36px;
+}
+
+.modal__category {
+  margin: 0 0 6px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.modal__title {
+  margin: 0 0 8px;
+  font-size: 22px;
+  color: var(--text-main);
+  font-family: var(--font-mono);
+}
+
+.modal__tech {
+  margin: 0 0 18px;
+  font-size: 13px;
+  color: var(--accent-cyan);
+}
+
+.modal__gallery-wrap {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.modal__gallery {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  scrollbar-width: none;
+}
+
+.modal__gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.modal__image {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  background: var(--bg-purple-dark);
+}
+
+.modal__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(10, 2, 9, 0.6);
+  color: var(--text-main);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__nav--prev { left: 10px; }
+.modal__nav--next { right: 10px; }
+.modal__nav:hover { background: var(--accent-orange); }
+
+.modal__progress {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.modal__progress-bar {
+  height: 100%;
+  background: var(--accent-orange);
+  border-radius: 2px;
+  transition: transform 0.2s ease;
+}
+
+.modal__section-title {
+  margin: 18px 0 8px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent-orange);
+  font-family: var(--font-mono);
+}
+
+.modal__section-title:first-child {
+  margin-top: 0;
+}
+
+.modal__paragraph {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
+.modal__paragraph--dim {
+  color: var(--text-dim);
+}
+
+.modal__list {
+  margin: 0 0 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.modal__list li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-main);
+}
+
+.modal__list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent-orange);
+}
+
+.modal__stack {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.project-link {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.project-link:hover {
+  color: var(--accent-orange);
+}
+
+@media (max-width: 640px) {
+  .modal {
+    padding: 22px 18px 18px;
+    max-height: 92vh;
+  }
+  .modal__image {
+    height: 170px;
+  }
+}
+
 @media (max-width: 640px) {
   .terminal {
     width: 100vw;
@@ -184,6 +415,12 @@ body {
   .terminal__input-line {
     padding-left: 12px;
     padding-right: 12px;
+  }
+  .snake-game {
+    font-size: 10px;
+  }
+  .game-over-art {
+    font-size: 6.5px;
   }
 }
 
